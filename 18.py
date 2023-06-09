@@ -1,14 +1,18 @@
 import random
 
 Num = int(input("Введите размер: "))
-Arr = [random.randint(1, 100) for i in range(Num)] #заполнение массива
+Arr = [random.randint(-100, 100) for i in range(Num)] #заполнение массива
 x = int(input("Искомое число: ")) #иск как мистер икс неизвестное.
+closest_num = None
+closest_diff = None
 print(Arr) #вывод массива
 
-# находим индекс элемента массива, ближайшего по модулю к x
-closest_index = 0
-for i in range(1, Num):
-    if abs(Arr[i] - x) < abs(Arr[closest_index] - x):
-        closest_index = i
 
-print(Arr[closest_index])
+
+for num in Arr:
+    diff = abs(num - x)
+    if closest_diff is None or diff < closest_diff:
+        closest_diff = diff
+        closest_num = num
+
+print("Ближайшее число к", x, ":", closest_num)
