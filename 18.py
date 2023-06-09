@@ -7,8 +7,7 @@ closest_num = None
 closest_diff = None
 print(Arr) #вывод массива
 
-
-
+#перебор с наимеьшей поиском разницы
 for num in Arr:
     diff = abs(num - x)
     if closest_diff is None or diff < closest_diff:
