@@ -1,8 +1,8 @@
-def power(num, dgr):
-    if dgr == 0:
+def power(a, b):
+    if b == 0:
         return 1
     else:
-        return num * power(num, dgr - 1)
+        return a * power(a, b - 1)
         
 num = int(input("Введите число: "))
 dgr = int(input("Введите степень числа: "))
